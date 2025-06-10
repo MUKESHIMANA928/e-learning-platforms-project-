@@ -1,0 +1,12 @@
+body {
+  font-family: comic centrary;
+  display: flex;
+  background: url('./components/assets/tech.jpg') no-repeat;
+  background-size: cover;
+}
+*
+{
+  margin: 2;
+  padding: 0;
+  box-sizing: border-box;
+}

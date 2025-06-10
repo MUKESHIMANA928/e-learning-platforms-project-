@@ -1,0 +1,68 @@
+/* ModuleForm.css */
+
+.module-form {
+    max-width: 600px; /* Limit the form width for better readability */
+    margin: 2rem auto; /* Center the form and add some top/bottom margin */
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; /* Enable flexbox for consistent spacing */
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Space between form elements */
+}
+
+.module-form label {
+    font-weight: 500;
+    color: #333;
+    display: block; /* Ensure labels take up full width for better alignment */
+    margin-bottom: 0.25rem; /* Small space between label and input */
+}
+
+/* General input, textarea, and select styling */
+.module-form input[type="text"],
+.module-form textarea,
+.module-form select {
+    border: 1px solid #d1d5db; /* Light grey border */
+    padding: 0.75rem; /* Consistent padding */
+    border-radius: 0.375rem; /* Slightly rounded corners */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #374151; /* Darker text color */
+}
+
+.module-form input[type="text"]:focus,
+.module-form textarea:focus,
+.module-form select:focus {
+    outline: none;
+    border-color: #3b82f6; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Subtle blue glow on focus */
+}
+
+/* Checkbox styling */
+.module-form input[type="checkbox"] {
+    margin-right: 0.5rem; /* Space between checkbox and label text */
+    /* You might need to add vendor prefixes or use a library for consistent custom checkbox styling */
+}
+
+/* Button styling (already largely handled by Tailwind) */
+.module-form button[type="submit"] {
+    /* Tailwind classes handle most of this: bg-blue-500 text-white px-4 py-2 rounded */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.module-form button[type="submit"]:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .module-form {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+}

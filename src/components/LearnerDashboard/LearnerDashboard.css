@@ -1,0 +1,773 @@
+/* LearnerDashboard.css */
+
+/* General Styling */
+.learner-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 100%; /* Max width for content */
+    margin: 10px;
+}
+
+/* --- Top Navigation Bar --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7290f1; /* Dark blue/grey */
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(240, 7, 135, 0.1);
+}
+
+.welcome-message {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links span {
+    cursor: pointer;
+    font-size: 1.05em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links span:hover {
+    background-color: #8f3dec; /* Slightly lighter dark blue */
+}
+
+.nav-links span.active {
+    background-color: #007bff; /* Blue for active tab */
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links svg {
+    font-size: 1.2em;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fccdfa;
+    border-radius: 20px;
+    padding: 1px 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 1em;
+    width: 200px;
+    background-color: transparent;
+}
+
+.search-icon {
+    color: #555;
+    margin-left: 5px;
+}
+
+.logout-btn {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1;
+    padding: 20px 30px;
+    background-color: #f4f7f6;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Module Grid */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.module-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.module-card h3 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.module-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.module-lecturer {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.module-status {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.status-completed {
+    color: #28a745; /* Green */
+}
+
+.status-in-progress {
+    color: #ffc107; /* Orange */
+}
+
+.go-to-module-btn,
+.enroll-module-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.go-to-module-btn:hover,
+.enroll-module-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-1px);
+}
+
+.go-to-module-btn svg,
+.enroll-module-btn svg {
+    font-size: 1.1em;
+}
+
+.link-text {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.link-text:hover {
+    color: #0056b3;
+}
+
+/* Error and Loading Messages */
+.error-message {
+    color: #dc3545; /* Red */
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- Module Learning Experience Section --- */
+.module-learning-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.module-learning-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.module-learning-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background-color: #6c757d; /* Grey */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #5a6268; /* Darker grey */
+}
+
+/* Content Viewer */
+.content-viewer {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.viewer-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.6em;
+}
+
+.close-viewer-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.close-viewer-btn:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+.viewer-body {
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.content-video,
+.content-iframe,
+.content-image {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #000; /* For video player background */
+}
+
+.content-iframe {
+    background-color: #fff; /* For PDF/presentation background */
+}
+
+.external-link-container {
+    padding: 20px;
+    background-color: #e9f7ef;
+    border: 1px solid #d4edda;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.external-link-container p {
+    font-size: 1.1em;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.external-resource-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.external-resource-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+
+/* Module Contents List */
+.module-contents-list {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.content-item {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s ease;
+}
+
+.content-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.content-details h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.25em;
+}
+
+.content-details p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.content-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.content-link {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none; /* For anchor tags */
+    transition: background-color 0.3s ease;
+}
+
+.content-link:hover {
+    background-color: #0056b3;
+}
+
+.content-link.external-link {
+    background-color: #17a2b8; /* Info blue */
+}
+
+.content-link.external-link:hover {
+    background-color: #138496;
+}
+
+/* Module Footer Actions */
+.module-footer-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+}
+
+.mark-module-complete-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.mark-module-complete-btn:hover:not(:disabled) {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-1px);
+}
+
+.mark-module-complete-btn:disabled {
+    background-color: #90ee90; /* Light green */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.take-assessment-btn {
+    background-color: #ffc107; /* Yellow/Orange */
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.take-assessment-btn:hover {
+    background-color: #e0a800; /* Darker yellow/orange */
+    transform: translateY(-1px);
+}
+
+.no-quiz-message {
+    font-style: italic;
+    color: #777;
+    font-size: 0.95em;
+}
+
+/* Profile Section */
+.profile-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.profile-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.profile-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin-bottom: 8px;
+}
+
+.profile-details strong {
+    color: #333;
+}
+
+/* --- Modal Styling (Enrollment Confirmation) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.modal-content h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.modal-content p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.enrollment-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.enrollment-message.success {
+    background-color: #d4edda;
+    color: #28a745;
+    border: 1px solid #c3e6cb;
+}
+
+.enrollment-message.error {
+    background-color: #f8d7da;
+    color: #dc3545;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    .logout-btn {
+        margin-left: 0;
+        width: 100%;
+        max-width: 150px;
+        justify-content: center;
+    }
+
+    .module-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .module-card {
+        padding: 20px;
+    }
+
+    .module-card h3 {
+        font-size: 1.3em;
+    }
+
+    .go-to-module-btn,
+    .enroll-module-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .module-learning-section {
+        padding: 20px;
+    }
+
+    .viewer-header h3 {
+        font-size: 1.4em;
+    }
+
+    .close-viewer-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .content-video,
+    .content-iframe,
+    .content-image {
+        height: 400px;
+    }
+
+    .module-footer-actions {
+        flex-direction: column;
+    }
+
+    .mark-module-complete-btn,
+    .take-assessment-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    .welcome-message {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .nav-links span {
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: auto;
+        margin: 10px 0;
+        align-self: center;
+    }
+
+    .logout-btn {
+        margin-top: 10px;
+        width: auto;
+        align-self: center;
+    }
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .module-learning-section {
+        padding: 15px;
+    }
+
+    .content-video,
+    .content-iframe,
+    .content-image {
+        height: 300px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
